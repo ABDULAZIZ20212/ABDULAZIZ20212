@@ -26,7 +26,7 @@ file_path = ("exams10.csv")
 #     blob.upload_from_file(f)
 
 blob = bucket.blob(file_path)
-blob.upload_from_filename('ABDULAZIZ20212/Vs.csv',content_type='text/csv')
+blob.upload_from_filename('Vs.csv',content_type='text/csv')
 st.write("upload complete")
 
 # print("upload complete")
