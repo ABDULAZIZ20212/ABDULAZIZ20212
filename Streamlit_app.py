@@ -11,7 +11,7 @@ if st.button('Click'):
 st.subheader('Step 2')
 
 #  Preparing Uploader for datasets or files.
-files = st.file_uploader('Upload data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf'],accept_multiple_files=True)
+files = st.file_uploader('Upload Your Data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf'],accept_multiple_files=True)
 for file in files:
  if file.type=='text/csv':
      df = pd.read_csv(file)
