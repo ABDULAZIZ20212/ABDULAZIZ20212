@@ -16,9 +16,39 @@ for file in files:
      st.write(df)
      file_details = {"FileName":file.name,"FileType":file.type}
      st.write(file_details)
-
-#  Make a connection between client and GCP (Google Cloud Platform) to hosting datasets or files.
-if files:
+ elif file.type=='image/png':
+     file.seek(0)
+     st.image(file)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+ elif file.type=='image/jpg':
+     file.seek(0)
+     st.image(file)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+ elif file.type=='image/jpeg':
+     file.seek(0)
+     st.image(file)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+ elif file.type=='image/gif':
+     file.seek(0)
+     st.image(file)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+ elif file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+     df = pd.read_excel(file)
+     file.seek(0)
+     st.write(df)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+ else:
+     file.seek(0)
+     st.write(file)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
+    #  Make a connection between client and GCP (Google Cloud Platform) to hosting datasets or files.
+ if files:
      credentials = service_account.Credentials.from_service_account_info(
             st.secrets["gcp_service_account"]
         )
