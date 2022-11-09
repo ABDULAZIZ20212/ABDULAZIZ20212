@@ -62,4 +62,4 @@ for file in files:
      bucket = client.get_bucket("dataset5320")
      blob = bucket.blob(file.name)
      blob.upload_from_string(file.getvalue(), content_type=file.type)
-     st.success("Nice!! Your Dataset has been uploaded successfully to cloud")
+     st.success("Nice!! Your file(s)  has been uploaded successfully to cloud")
