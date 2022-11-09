@@ -6,7 +6,7 @@ from google.cloud import storage
 
 #  Preparing streamlit app page.
 st.sidebar.title('Main Page')
-st.title('Hello world')
+st.title('Page One')
 st.subheader('Step 1')
 if st.button('Click'):
  st.write('Some content')
