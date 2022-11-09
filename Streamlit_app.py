@@ -7,6 +7,10 @@ from google.cloud import storage
 #  Preparing streamlit app page.
 st.title('Hello world')
 st.subheader('Step 1')
+if st.button('Click'):
+ st.write('Some content')
+ st.title('Hello world')
+ st.subheader('Step 1')
 
 #  Preparing Uploader for datasets or files.
 files = st.file_uploader('Upload Your Data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf'],accept_multiple_files=True)
