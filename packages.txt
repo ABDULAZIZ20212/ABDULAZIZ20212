@@ -1,2 +1,2 @@
-import openpyxl
+pip install openpyxl
 from openpyxl import Workbook
