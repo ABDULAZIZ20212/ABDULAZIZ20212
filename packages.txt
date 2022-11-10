@@ -1,4 +1,0 @@
-import openpyxl
-from openpyxl import Workbook
-freeglut3-dev
-libgtk2.0-dev
