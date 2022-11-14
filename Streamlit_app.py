@@ -17,7 +17,7 @@ if st.button('Click'):
 files = st.file_uploader('Upload Your Data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf', 'zip', 'rar'],accept_multiple_files=True)
 for file in files:
  if file.type=='text/csv':
-     df = pd.read_csv(file, mode='r', encoding='utf16')
+     df = pd.read_csv(file, encoding='utf16')
      file.seek(0)
      st.write(df)
      file_details = {"FileName":file.name,"FileType":file.type}
