@@ -42,12 +42,12 @@ for file in files:
      st.image(file)
      file_details = {"FileName": file.name, "FileType": file.type}
      st.write(file_details)
-#  elif file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-#      df = pd.read_excel(file)
-#      file.seek(0)
-#      st.write(df)
-#      file_details = {"FileName": file.name, "FileType": file.type}
-#      st.write(file_details)
+ elif file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+     df = pd.read_excel(file)
+     file.seek(0)
+     st.write(df)
+     file_details = {"FileName": file.name, "FileType": file.type}
+     st.write(file_details)
  else:
      file.seek(0)
      st.write(file)
