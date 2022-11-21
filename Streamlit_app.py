@@ -2,12 +2,23 @@ import pandas as pd
 import streamlit as st
 import pip
 pip.main(["install", "openpyxl"])
-# pip.main(["install", "streamlit_option_menu"])
+pip.main(["install", "streamlit_option_menu"])
 from google.oauth2 import service_account
 from google.cloud import storage
-# from streamlit_option_menu import option_menu
+from streamlit_option_menu import option_menu
 
-
+with st.sidebar:
+    # 1. as sidebar menu
+    selected3 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'],
+                            icons=['house', 'cloud-upload', "list-task", 'gear'],
+                            menu_icon="cast", default_index=0, orientation="",
+                            styles={
+                                "container": {"": "", "background-color": "#fafafa"},
+                                "icon": {"color": "orange", "font-size": ""},
+                                "nav-link": {"font-size": "", "": "", "margin": "",
+                                             "--hover-color": "#eee"},
+                                "nav-link-selected": {"background-color": "green"},
+                            })
 #  Preparing streamlit app page.
 st.title('Page One')
 st.subheader('Step 1')
