@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import pip
 pip.main(["install", "openpyxl"])
-pip.main(["install", "streamlit_option_menu"])
+pip(["install", "streamlit_option_menu"])
 from google.oauth2 import service_account
 from google.cloud import storage
 from streamlit_option_menu import option_menu
