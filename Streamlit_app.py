@@ -9,18 +9,6 @@ from streamlit_option_menu import option_menu
 
 
 #  Preparing streamlit app page.
-with st.sidebar:
-    # 1. as sidebar menu
-    selected3 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'],
-                            icons=['house', 'cloud-upload', "list-task", 'gear'],
-                            menu_icon="cast", default_index=0, orientation="",
-                            styles={
-                                "container": {"": "", "background-color": "#fafafa"},
-                                "icon": {"color": "orange", "font-size": ""},
-                                "nav-link": {"font-size": "", "": "", "margin": "",
-                                             "--hover-color": "#eee"},
-                                "nav-link-selected": {"background-color": "green"},
-                            })
 st.title('Page One')
 st.subheader('Step 1')
 if st.button('Click'):
