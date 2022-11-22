@@ -4,7 +4,7 @@ import pip
 # pip.main(["install", "openpyxl", "streamlit_option_menu"])
 from google.oauth2 import service_account
 from google.cloud import storage
-from streamlit_option_menu import option_menu
+# from streamlit_option_menu import option_menu
 
 with st.sidebar:
     # 1. as sidebar menu
