@@ -2,16 +2,37 @@ import pandas as pd
 import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import storage
-#  Preparing streamlit app page.
-st.title('Page One')
-st.subheader('Step 1')
-if st.button('Click'):
- st.write('Some content')
- st.title('Hello world')
- st.subheader('Step 1')
+from streamlit_option_menu import option_menu
 
+with st.sidebar:
+    # 1. as sidebar menu
+    selected3 = option_menu(None, ["Home", "Uploads", "Contact Us", 'Settings'],
+                            icons=['house', 'cloud-upload', "list-task", 'gear'],
+                            menu_icon="cast", default_index=0, orientation="",
+                            styles={
+                                "container": {"": "", "background-color": "#fafafa"},
+                                "icon": {"color": "orange", "font-size": ""},
+                                "nav-link": {"font-size": "", "": "", "margin": "",
+                                             "--hover-color": "#eee"},
+                                "nav-link-selected": {"background-color": "green"},
+                            })
+st.write(
+    # 1. as sidebasr menu
+    selected3 = option_menu(None, ["Home", "Uploads"],
+                            icons=['house', 'cloud-upload'],
+                            menu_icon="cast", default_index=0, orientation="horizontal",
+                            styles={
+                                "container": {"": "", "background-color": "#fafafa"},
+                                "icon": {"color": "orange", "font-size": ""},
+                                "nav-link": {"font-size": "", "": "", "margin": "",
+                                             "--hover-color": "#eee"},
+                                "nav-link-selected": {"background-color": "black"},
+                            }))
+#  Preparing streamlit app page.
+st.title('Dataset Collection')
+st.subheader('Datasets are collected and stored and classified in Google Cloud Platform via this application for ML Training')
 #  Preparing Uploader for datasets or files.
-files = st.file_uploader('Upload Your Data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf', 'zip', 'rar'],accept_multiple_files=True)
+files = st.file_uploader('Upload Your Data',type=['csv', 'xlsx', 'png', 'jpeg', 'jpg' ,'gif', 'docx','pdf', 'zip', 'rar', 'folder'],accept_multiple_files=True)
 for file in files:
  if file.type=='text/csv':
      df = pd.read_csv(file, encoding="utf8")
