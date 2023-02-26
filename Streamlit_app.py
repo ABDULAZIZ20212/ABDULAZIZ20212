@@ -79,7 +79,7 @@ for file in files:
             st.secrets["gcp_service_account"]
         )
      client = storage.Client(credentials=credentials)
-     bucket = client.get_bucket("dataset5320")
+     bucket = client.get_bucket("cpit-632")
      blob = bucket.blob(file.name)
      blob.upload_from_string(file.getvalue(), content_type=file.type)
      st.success("Nice!! Your file(s)  has been uploaded successfully to cloud")
